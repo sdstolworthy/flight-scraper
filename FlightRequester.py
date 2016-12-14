@@ -39,7 +39,7 @@ class FlightRequester:
         sortDeals = sorted(set(sortDeals), key=lambda tup: tup[0])
         '''Returns tuple (PRICE, DESCRIPTION)'''
         return sortDeals
-
+    
     def getDealsByContinent(self,dealTuple):
         dealsByCountry = {}
         dealsByCountry['Unknown'] = []

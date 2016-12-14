@@ -41,16 +41,16 @@ class TheFlightDealParser(HTMLParser):
         if tag == 'a' and self.collectUrl:
             if self.urlIndex < 2:
                 self.urlIndex += 1
-                for key,value in attrs:
+                for key, value in attrs:
                     if key == 'href':
                         #print(" THIS IS YOUR NEXT URL:  %s" % value.replace('\\',''))
-                        self.urls.append(value.replace('\\',''))
+                        self.urls.append(value.replace('\\', ''))
             else:
                 self.urlIndex = 0
                 self.collectUrl = False
     def handle_endtag(self, tag):
         if tag == 'a' and self.title:
-            self.title=False
+            self.title = False
     def handle_data(self, data):
         if self.collectData:
             #print("%s\n\n" % data)
